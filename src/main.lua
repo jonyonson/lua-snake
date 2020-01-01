@@ -68,14 +68,22 @@ function love.keypressed(key)
     end
 
     if not gameOver then
-        if key == 'left' and snakeMoving ~= 'right' then
-            snakeMoving = 'left'
-        elseif key == 'right' and snakeMoving ~= 'left' then
-            snakeMoving = 'right'
-        elseif key == 'up' and snakeMoving ~= 'down' then
-            snakeMoving = 'up'
-        elseif key == 'down' and snakeMoving ~= 'up' then
-            snakeMoving = 'down'
+        if key == 'left' then
+            if #snakeTiles == 1 or snakeMoving ~= 'right' then
+                snakeMoving = 'left'
+            end
+        elseif key == 'right' then
+            if #snakeTiles == 1 or snakeMoving ~= 'left' then
+                snakeMoving = 'right'
+            end
+        elseif key == 'up' then
+            if #snakeTiles == 1 or snakeMoving ~= 'down' then
+                snakeMoving = 'up'
+            end
+        elseif key == 'down' then
+            if #snakeTiles == 1 or snakeMoving ~= 'up' then
+                snakeMoving = 'down'
+            end
         end
     end
 
